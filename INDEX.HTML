@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="index.css">
+    
+    <script>
+        function handlesubmit(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            localStorage.setItem('username', username);
+            localStorage.setItem('password', password);
+
+            document.getElementById('username').value = '';  // Clear username
+            document.getElementById('password').value = '';  // Clear password
+
+            window.location.href = 'WEBDEV1.html';
+          
+
+
+
+
+
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="login-container">
+        <h1 class="login-text">Login</h1>
+        <div class="user-pass">
+        <form action="http://localhost:3002/submit-form" method="POST" onsubmit="handlesubmit(event)">
+            <label for="username" ><h2>Username:</h2></label>
+            <input type="text" id="username" name="username" autocomplete="new-username" placeholder="username">
+
+            <label for="password"><h2>Password:</h2></label>
+            <input type="password" id="password" name="password" autocomplete="new-password" placeholder="password">
+            <input type="hidden" name="fakefield" autocomplete="off"  style="display: none">
+            <button type="submit">Submit</button>
+        </div>
+        </form>
+
+
+    </div>
+</body>
+</html>

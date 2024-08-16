@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data</title>
+    <link rel="stylesheet" href="webdev1.css">
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .login-container { width: 300px; margin: 0 auto; padding: 50px; }
+        input { display: block; margin: 10px 0; padding: 10px; width: 100%; }
+        button { padding: 10px; width: 100%; background-color: #007bff; color: #fff; border: none; }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const username = localStorage.getItem("username");
+            const password = localStorage.getItem("password");
+            document.getElementById("udisplay").textContent = username;
+            document.getElementById("pdisplay").textContent = password;
+            localStorage.removeItem("username");
+            localStorage.removeItem("password");
+        });
+    </script>
+</head>
+
+<body>
+    <div class="login-containers">
+        <h1 class="saima">Form Data</h1>
+        <p><h2>USERNAME: </h2><span id="udisplay"></span></p>
+        <p><h2>PASSWORD: </h2><span id="pdisplay"></span></p>
+    </div>
+</body>
+</html>
